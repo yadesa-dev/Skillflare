@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard - SkillFlare</title>
+</head>
+<body style="font-family: Arial; background:#020617; color:white; text-align:center; padding:50px;">
+
+<h1>Welcome to Dashboard 🚀</h1>
+<p id="userEmail"></p>
+
+<button onclick="logout()">Logout</button>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_ID",
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+// show user
+auth.onAuthStateChanged(user => {
+  if (user) {
+    document.getElementById("userEmail").innerText = user.email;
+  } else {
+    window.location.href = "index.html"; // not logged in → go back
+  }
+});
+
+// logout
+function logout(){
+  auth.signOut();
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
