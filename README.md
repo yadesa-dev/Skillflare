@@ -14,10 +14,10 @@ To build a powerful ecosystem where anyone can learn, earn, and grow using their
 ## 🛠 Tech Stack
 - HTML
 - CSS
-- JavaScript (coming soon)
+- JavaScript
 
 ## 📌 Status
-🚧 Currently in development
+🚧 In active development
 
 ## 👤 Author
-- Yadesa (yadesa-dev)
+- Yadesa Dilbo (@yadesa-dev)
