@@ -1,53 +1,677 @@
+HTML
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Skillflare</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillFlare</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+
+  background: linear-gradient(-45deg, #0f172a, #020617, #1e293b, #020617);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+
+  scroll-behavior: smooth;}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%;}
+  50% { background-position: 100% 50%;}
+  100% { background-position: 0% 50%;}
+}
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      background: #020617;
+      transition:  0.3s;
+   }
+    header div {
+    display: flex;
+    align-items: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+header img {
+    width: 45px;
+    border-radius: 6px;
+}
+.btn {
+  background: linear-gradient(45deg, #f97316, #fb923c);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  transition: 0.3s;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero h2 {
+    font-size: 28px;
+}
+.hero p {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.btn {
+    animation: fadeIn 2s ease-in-out;
+}
+/* ANIMATION */
+.hero h2 {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero p {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.btn {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* BUTTON TAP EFFECT (for phone) */
+.btn:active {
+    transform: scale(0.95);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header.scrolled {
+    padding: 8px 20px;
+    background: rgba(2, 6, 23, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #f97316;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #ea580c;
+    background: #ea580c;
+  box-shadow: 0 0 15px #f97316;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT SIDE */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+/* RIGHT SIDE (USER) */
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* USER NAME */
+#userDisplay {
+  color: #f97316;
+  font-weight: bold;
+}
+
+nav a {
+    margin-left: 20px;
+    white-space: nowrap;
+} img {
+    width: 40px;
+    margin-right: 10px;
+}
+    header img {
+      width: 50px;
+      margin-right: 10px;
+    }
+      nav a {
       color: white;
-      text-align: center;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
     }
 
-    .container {
+nav a:hover {
+  color: #f97316;
+}
+  
+
+    h1 {
+      color: #f97316;
+    }
+
+    .hero {
+      text-align: center;
       padding: 60px 20px;
     }
 
-    h1 {
-      font-size: 40px;
+    .hero h2 {
+      font-size: 28px;
     }
 
-    p {
-      color: #cbd5f5;
-      font-size: 18px;
-      max-width: 600px;
-      margin: auto;
+.btn:hover {
+    background: #ff8c2a;
+    box-shadow: 0 0 15px #f97316;
+}
+
+    .skills {
+      padding: 20px;
     }
 
-    .btn {
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #22c55e;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-    }
+.card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 18px;
+
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+
+  /* Smooth animation */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow border effect */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(120deg, transparent, #f97316, transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* ICON STYLE */
+.icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient(circle at 30% 30%, #1a1a1a, #000);
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.05),
+              0 5px 15px rgba(0,0,0,0.6);
+}
+
+.icon i {
+  font-size: 26px;
+  color: #f97316;
+  transition: 0.3s;
+}
+
+/* Icon glow on hover */
+.card:hover .icon i {
+  text-shadow: 0 0 10px #f97316, 0 0 20px #f97316;
+  transform: scale(1.2);
+}
+
+/* TEXT */
+.card h3 {
+  margin: 0;
+}
+
+.card p {
+  margin: 5px 0 0;
+  color: #ccc;
+}
+  .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: skewX(-20deg);
+}
+
+.card:hover::after {
+  left: 120%;
+  transition: 0.7s;
+}
+/* BACKGROUND CONTAINER */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* GLOW BALLS */
+.bg-animation::before,
+.bg-animation::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  animation: moveGlow 10s infinite alternate ease-in-out;
+}
+
+/* ORANGE GLOW */
+.bg-animation::before {
+  background: #f97316;
+  top: 10%;
+  left: 10%;
+}
+
+/* BLUE GLOW */
+.bg-animation::after {
+  background: #3b82f6;
+  bottom: 10%;
+  right: 10%;
+}
+
+/* ANIMATION */
+@keyframes moveGlow {
+  0% { transform: translate(0, 0);}
+  100% { transform: translate(100px, -80px); }
+}
+.bg-animation::after {
+  animation-duration: 14s;}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.7);
+
+  display: none; /* VERY IMPORTANT */
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.popup-content {
+  background: #0a1a2f;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: 80%;
+  max-width: 300px;
+}
+
+.close {
+  cursor: pointer;
+  color: orange;
+  font-size: 22px;
+}
+section {
+  scroll-margin-top: 80px;
+}
+nav a.active {
+  color: #f97316;
+}
+
+nav a.active::after {
+  width: 100%;
+}
+/* HAMBURGER STYLE */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 15px;
+}
+
+#logoutBtn {
+  padding: 6px 12px;
+  font-size: 14px;
+}
   </style>
+  
 </head>
 
 <body>
+<div class="bg-animation"></div>
+  
+<header>
+<div style="display:flex; align-items:center;">
+  <img src="logo.png" alt="logo">
+  <h1>SkillFlare</h1>
+</div>
 
-  <div class="container">
-    <h1>Skillflare 🚀</h1>
-    <p>
-      Learn skills. Showcase talent. Grow professionally.
-    </p>
-
-    <button class="btn">Get Started</button>
+<nav>
+  <div class="nav-left">
+    <a href="#home">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
   </div>
 
+  <div class="user-box">
+    <span id="userDisplay"></span>
+
+    <button id="logoutBtn" class="btn" style="display:none;">
+      Logout
+    </button>
+  </div>
+</nav>
+
+</header>
+
+
+<section class="hero" id="home">
+  <h2>Ignite Your Skills 🔥</h2>
+ <p>Connect, learn and grow your talents</p>
+  <a href="#" class="btn" id="joinBtn">Join Now</a>
+</section>
+
+<section class="skills" id="skills">
+  <h2>Popular Skills</h2>
+
+<div class="card reveal" style="transition-delay: 0s;">
+  <div class="icon"><i class="fas fa-code"></i></div>
+  <div>
+    <h3>Web Development</h3>
+    <p>Learn how to build websites</p>
+  </div>
+</div>
+
+<div class="card reveal" style="transition-delay: 0.3s;">
+  <div class="icon"><i class="fas fa-pen-nib"></i></div>
+  <div>
+    <h3>Graphic Design</h3>
+    <p>Create amazing visuals</p>
+  </div>
+</div>
+
+<div class="card reveal" style="transition-delay: 0.6s;">
+  <div class="icon"><i class="fas fa-music"></i></div>
+  <div>
+    <h3>Music Production</h3>
+    <p>Create, edit and produce music</p>
+  </div>
+</div>
+
+</section>
+
+<section id="contact" style="padding: 100px 20px; text-align: center; min-height: 100vh;">
+  <h2>Contact Us</h2>
+  <p>Email: skillflare@email.com</p>
+</section>
+<script>
+  function revealOnScroll() {
+    const elements = document.querySelectorAll('.reveal');
+
+    elements.forEach((el) => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - 50) {
+        el.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+  </script>
+
+<div class="popup" id="popup">
+<div class="popup-content">
+  <h2 id="formTitle">Login</h2>
+
+<input type="email" id="email" placeholder="Your Email"><br><br>
+<input type="password" id="password" placeholder="Password"><br><br>
+
+  <button id="submitBtn">Login</button><br><br>
+
+  <p style="font-size: 14px;">
+    <span id="toggleText">Don't have an account?</span>
+    <span id="toggleBtn" style="color: orange; cursor: pointer;">Register</span>
+  </p>
+
+  <span class="close">&times;</span>
+</div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyDOjtLKJMgYzIyIzeRiC5mSQhmDLysUY2o",
+  authDomain: "skillflare-7337.firebaseapp.com",
+  projectId: "skillflare-7337",
+  storageBucket: "skillflare-7337.appspot.com",
+  messagingSenderId: "483200856160",
+  appId: "1:483200856160:web:6eb1f4ad5f29e2135c5305"
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+console.log("Firebase connected ✅");
+</script>
+
+<script>
+const joinBtn = document.getElementById("joinBtn");
+const popup = document.getElementById("popup");
+const closeBtn = document.querySelector(".close");
+
+joinBtn.onclick = () => {
+  popup.style.display = "flex";
+};
+
+closeBtn.onclick = () => {
+  popup.style.display = "none";
+};
+</script>
+
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.clientHeight;
+
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+</script>
+<script>
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+</script>
+<script>
+const submitBtn = document.getElementById("submitBtn");
+const toggleBtn = document.getElementById("toggleBtn");
+const formTitle = document.getElementById("formTitle");
+const toggleText = document.getElementById("toggleText");
+
+let isLogin = true;
+
+toggleBtn.onclick = () => {
+  isLogin = !isLogin;
+
+  if (isLogin) {
+    formTitle.innerText = "Login";
+    submitBtn.innerText = "Login";
+    toggleText.innerText = "Don't have an account?";
+    toggleBtn.innerText = "Register";
+  } else {
+    formTitle.innerText = "Register";
+    submitBtn.innerText = "Register";
+    toggleText.innerText = "Already have an account?";
+    toggleBtn.innerText = "Login";
+  }
+};
+</script>
+<script>
+
+submitBtn.onclick = async () => {
+  console.log("Submit button:", submitBtn);
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  if (!email || !password) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  try {
+    if (isLogin) {
+      // 🔐 LOGIN
+      await auth.signInWithEmailAndPassword(email, password);
+      alert("Login successful ✅");
+    } else {
+      // 🆕 REGISTER
+      await auth.createUserWithEmailAndPassword(email, password);
+      alert("Account created 🎉");
+    }
+    
+    document.getElementById("popup").style.display = "none";
+
+    }catch (error) {
+      if (error.code === "auth/user-not-found") {
+    alert("User not found. Please register first.");
+  } else if (error.code === "auth/wrong-password") {
+    alert("Wrong password.");
+  } else if (error.code === "auth/email-already-in-use") {
+    alert("Email already registered. Please login.");
+  } else if (error.code === "auth/invalid-email") {
+    alert("Invalid email format.");
+  } else if (error.code === "auth/weak-password") {
+    alert("Password should be at least 6 characters.");
+  } else {
+    alert(error.message);
+  }
+}
+};
+</script>
+<script>
+const userDisplay = document.getElementById("userDisplay");
+const logoutBtn = document.getElementById("logoutBtn");
+
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    userDisplay.innerText = user.email; // show email
+    logoutBtn.style.display = "inline-block";
+  } else {
+    userDisplay.innerText = "";
+    logoutBtn.style.display = "none";
+  }
+});
+</script>
+
 </body>
-</html>
+    </html>
