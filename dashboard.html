@@ -15,9 +15,12 @@
 
 <script>
 const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_ID",
+  apiKey: "AIzaSyDOjtLKJMgYzIyIzeRiC5mSQhmDLysUY2o",
+  authDomain: "skillflare-7337.firebaseapp.com",
+  projectId: "skillflare-7337",
+  storageBucket: "skillflare-7337.appspot.com",
+  messagingSenderId: "483200856160",
+  appId: "1:483200856160:web:6eb1f4ad5f29e2135c5305"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -33,9 +36,13 @@ auth.onAuthStateChanged(user => {
 });
 
 // logout
-function logout(){
-  auth.signOut();
-  window.location.href = "index.html";
+function logout() {
+  auth.signOut().then(() => {
+    console.log("Logged out ✅");
+    window.location.href = "index.html";
+  }).catch((error) => {
+    console.error(error);
+  });
 }
 </script>
 
