@@ -662,8 +662,9 @@ submitBtn.onclick = async () => {
 const userDisplay = document.getElementById("userDisplay");
 const logoutBtn = document.getElementById("logoutBtn");
   logoutBtn.onclick = () => {
-  console.log("Logout clicked"); // test
-  auth.signOut();
+  auth.signOut().then(() => {
+    window.location.href = "index.html";
+  });
 };
 
 auth.onAuthStateChanged((user) => {
