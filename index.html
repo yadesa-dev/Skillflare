@@ -632,11 +632,11 @@ submitBtn.onclick = async () => {
     if (isLogin) {
       // 🔐 LOGIN
       await auth.signInWithEmailAndPassword(email, password);
-      alert("Login successful ✅");
+      window.location.href = "dashboard.html";
     } else {
       // 🆕 REGISTER
       await auth.createUserWithEmailAndPassword(email, password);
-      alert("Account created 🎉");
+      window.location.href = "dashboard.html";
     }
     
     document.getElementById("popup").style.display = "none";
